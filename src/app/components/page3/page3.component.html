@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between" *ngIf="permissions$ | async as permissions">
+  <div class="">
+    <button class="btn btn-outline-secondary">Cancelar</button>
+  </div>
+  <div class="" *ngIf="permissions?.send">
+    <button class="btn btn-success">Enviar pago</button>
+  </div>
+</div>
+
+
+<div class="my-3">
+  <pre>
+    {{(permissions$ | async) | json}}
+  </pre>
+</div>

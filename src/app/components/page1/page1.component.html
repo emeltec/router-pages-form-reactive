@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between" *ngIf="permissions$ | async as permissions">
+  <div class="">
+    <button class="btn btn-outline-secondary">Cancelar</button>
+  </div>
+  <div class="" *ngIf="permissions?.register">
+    <button class="btn btn-secondary">Registrar en bandeja</button>
+  </div>
+  <div class="" *ngIf="permissions?.isSingleSigner">
+    <button class="btn btn-danger">Firmar ahora</button>
+  </div>
+</div>
+
+<div class="my-3">
+  <pre>
+    {{(permissions$ | async) | json}}
+  </pre>
+</div>
+

@@ -1,0 +1,59 @@
+<div class="container fluid">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/page1" [routerLinkActive]="'active'">Registrar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/page2" [routerLinkActive]="'active'">Firmar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/page3" [routerLinkActive]="'active'">Enviar</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-3" style="background: #bfc0be;">
+      <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+        <div class="my-2">
+          <input type="checkbox" id="c1" formControlName="isFirstSigner">
+          <label for="c1">isFirstSigner</label>
+        </div>
+        <div class="my-2">
+          <input type="checkbox" id="c2" formControlName="isSecondSigner">
+          <label for="c2">isSecondSigner</label>
+        </div>
+        <div class="my-2">
+          <input type="checkbox" id="c3" formControlName="isSingleSigner">
+          <label for="c3">isSingleSigner</label>
+        </div>
+        <div class="my-2">
+          <input type="checkbox" id="c4" formControlName="query">
+          <label for="c4">query</label>
+        </div>
+        <div class="my-2">
+          <input type="checkbox" id="c5" formControlName="register">
+          <label for="c5">register</label>
+        </div>
+        <div class="my-2">
+          <input type="checkbox" id="c6" formControlName="send">
+          <label for="c6">send</label>
+        </div>
+        <div class="my-2">
+          <button class="btn btn-dark" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col" style="background: #d4d4d4;">
+      <div class=" my-5">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>
+</div>
