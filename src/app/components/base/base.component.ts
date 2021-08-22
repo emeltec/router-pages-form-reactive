@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { IPermission } from 'src/app/config/permision.interface';
 import { CommonsService } from 'src/app/services/commons.service';
 
 @Component({
@@ -11,10 +10,10 @@ import { CommonsService } from 'src/app/services/commons.service';
 export class BaseComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
-    isFirstSigner:  new FormControl(),
-    isSecondSigner:  new FormControl(),
-    isSingleSigner:  new FormControl(),
-    query:  new FormControl(),
+    isFirstSigner: new FormControl(),
+    isSecondSigner: new FormControl(),
+    isSingleSigner: new FormControl(),
+    query: new FormControl(),
     register: new FormControl(),
     send: new FormControl(),
   })
@@ -30,7 +29,7 @@ export class BaseComponent implements OnInit {
   ngOnInit(): void {
 
     this.form.valueChanges.subscribe(values => {
-      console.log(values)
+      console.log(values);
       this.service.permission$.next(values);
     })
   }
